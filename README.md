@@ -14,6 +14,8 @@ get repos user messages by api
 1. 选项
 - ‘--g’ : 输入github项目地址
 - ‘--sf’ : 输入SourceForge项目地址
+- ‘-h’ : 程序help信息
+
 2. 运行命令
 - ./GetUserMsg + 选项 + 项目地址   
   比如：./GetUserMsg --g https://github.com/lz4/lz4 、 ./GetUserMsg --sf https://sourceforge.net/projects/sevenzip
