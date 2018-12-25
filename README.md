@@ -5,8 +5,8 @@ get repos user messages by api
 - 根据项目的仓库地址（github URL 或者 SourceForge URL），获取项目的贡献者或开发者 信息
 
 ## 目录结构
-GetUserMsg.py : 源代码  
-GetUserMsg : 可执行程序
+1. GetUserMsg.py : 源代码  
+2. GetUserMsg : 可执行程序
 
 ## 运行
 1. 选项
