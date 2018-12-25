@@ -13,5 +13,5 @@ GetUserMsg : 可执行程序
 - ‘--g’ : 输入github项目地址
 - ‘--sf’ : 输入SourceForge项目地址
 2. 运行命令
-- ./GetUserMsg + 选项 + 项目地址  
-- 比如：./GetUserMsg --g https://github.com/lz4/lz4   ./GetUserMsg --sf https://sourceforge.net/projects/sevenzip
+- ./GetUserMsg + 选项 + 项目地址   
+  比如：./GetUserMsg --g https://github.com/lz4/lz4   ./GetUserMsg --sf https://sourceforge.net/projects/sevenzip
