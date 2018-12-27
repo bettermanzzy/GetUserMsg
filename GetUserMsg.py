@@ -15,18 +15,14 @@ uname = 'bettermanzzy'
 def start_requests(url):
     #print('getting', url)
     headers = {'User-Agent': 'Mozilla/5.0',
-               'Authorization': 'token 5b2e094c24989ae1f09b6f120f46819e8e82047c',
+               'Authorization': 'token a707dc37baf468ded100e84bf357418a81846927',
                'Content-Type': 'application/json',
                'Accept': 'application/json'
                }
     return requests.get(url,headers=headers)
 
 def findEmailFromContributor(username, repo, contributor):
-    headers = {'User-Agent': 'Mozilla/5.0',
-               'Authorization': 'token d1e20c381ba7dd8bc6627c319fde0bdf95830ac8',
-               'Content-Type': 'application/json',
-               'Accept': 'application/json'
-               }
+
     response = get('https://github.com/%s/%s/commits?author=%s' % (username, repo, contributor), auth=HTTPBasicAuth(uname, '')).text
     latestCommit = re.search(r'href="/%s/%s/commit/(.*?)"' % (username, repo), response)
     if latestCommit:
