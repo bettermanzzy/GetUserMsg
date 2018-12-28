@@ -24,3 +24,6 @@ get repos user messages by api
     比如：./GetUserMsg  -t  tokenID  --g  https://github.com/lz4/lz4   
 - 获取SourceForge项目贡献者信息：  ./GetUserMsg + --sf sourceforge项目地址  
     比如：./GetUserMsg  -sf  https://sourceforge.net/projects/sevenzip 
+
+3. 获取auth tokenID  
+   github页面——>settings——>developer settings——>Personal access tokens——>generate new token
