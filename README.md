@@ -17,7 +17,7 @@ get repos user messages by api
 - '--g' : 输入github项目地址
 - '--sf' : 输入SourceForge项目地址
 - '-a' : 输入all, 默认是输出30个contributors,使用该选项可输出所有contributors (可选）
-- ‘-h’ : 程序help信息
+- '-h' : 程序help信息
 
 2. 运行命令
 - 获取github项目贡献者信息：./GetUserMsg + -t tokenID + --g github项目地址     
