@@ -11,11 +11,12 @@ from requests.auth import HTTPBasicAuth
 
 BEARER_TOKEN = 'fbfd6b48b8c47c0c15d7'
 uname = 'bettermanzzy'
+access_token = 'token 35e4678ad75069dd97126331b9a6928a60ab7f2d'
 
 def start_requests(url):
     #print('getting', url)
     headers = {'User-Agent': 'Mozilla/5.0',
-               'Authorization': 'token a707dc37baf468ded100e84bf357418a81846927',
+               'Authorization': access_token,
                'Content-Type': 'application/json',
                'Accept': 'application/json'
                }
@@ -35,16 +36,27 @@ def findEmailFromContributor(username, repo, contributor):
     email_list = re.findall(r'<(.*)>', commitStr)
     if len(email_list) >= 1:
         email = email_list[0]
-    return email
+        return email
+    else:
+        return None
 
 if __name__ == '__main__':
 
     parse = argparse.ArgumentParser()
     #parse.add_argument('integer',type=int,help='display an integer')
+    parse.add_argument('-u',help="get your github username",type=str)
+    parse.add_argument('-t',help="get your auth token",type=str)
     parse.add_argument('--g',help="get github api message",type=str)
     parse.add_argument('--sf',help="get sourceforge api message",type=str)
+    parse.add_argument('-a',help='get all contributors',type=str)
 
     args = parse.parse_args()
+
+    if args.u:
+        uname = args.u
+
+    if args.t:
+        access_token = 'token ' + args.t
 
     if args.sf:
         print("sourceforge url",args.sf)
@@ -104,8 +116,9 @@ if __name__ == '__main__':
         else:
             print("Your input is error,please try again")
             sys.exit(0)
-
         url = 'https://api.github.com/repos/' + username + '/' + xlsx_name + '/' + 'contributors'
+        if args.a:
+            url = 'https://api.github.com/repos/' + username + '/' + xlsx_name + '/' + 'contributors'+'?per_page=100'
         get_url = start_requests(url)
         get_data = get_url.json()
         print('the numbers of contributors : ', len(get_data))
@@ -124,7 +137,8 @@ if __name__ == '__main__':
                 id = data['login']
                 emails = []
                 email = findEmailFromContributor(username, xlsx_name, id)
-                emails.append(email)
+                if email is not None:
+                    emails.append(email)
                 commits = data['contributions']
                 msg_url = data['url']
                 get_msg = start_requests(msg_url).json()
@@ -134,7 +148,6 @@ if __name__ == '__main__':
                 company = get_msg['company']
                 location = get_msg['location']
                 email1 = get_msg['email']
-
                 if email1 != email and email1 is not None:
                     emails.append(email1.encode('utf8'))
                 project = get_msg['public_repos']
