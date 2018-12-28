@@ -13,7 +13,7 @@ get repos user messages by api
 ## 运行
 1. 选项
 - '-u' : 输入你的github 账号 （可选）
-- '-t' : 输入你的auth token 值
+- '-t' : 输入你的auth token 值 (需要输入token进行认证）
 - '--g' : 输入github项目地址
 - '--sf' : 输入SourceForge项目地址
 - '-a' : 输入all, 默认是输出30个contributors,使用该选项可输出所有contributors (可选）
