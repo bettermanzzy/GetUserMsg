@@ -21,6 +21,6 @@ get repos user messages by api
 
 2. 运行命令
 - 获取github项目贡献者信息：./GetUserMsg + -t tokenID + --g github项目地址     
-    比如：./GetUserMsg -t tokenID --g https://github.com/lz4/lz4   
-- 获取SourceForge项目贡献者信息：  ./GetUserMsg + --sf sourceforge项目地址
-    比如：./GetUserMsg -sf https://sourceforge.net/projects/sevenzip 
+    比如：./GetUserMsg  -t  tokenID  --g  https://github.com/lz4/lz4   
+- 获取SourceForge项目贡献者信息：  ./GetUserMsg + --sf sourceforge项目地址  
+    比如：./GetUserMsg  -sf  https://sourceforge.net/projects/sevenzip 
