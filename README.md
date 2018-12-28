@@ -20,6 +20,6 @@ get repos user messages by api
 - ‘-h’ : 程序help信息
 
 2. 运行命令
-- ./GetUserMsg + 选项't' + 选项'--g'/'--sf' + 项目地址   
+- ./GetUserMsg + 选项 + 项目地址   
   比如：./GetUserMsg -t tokenID --g https://github.com/lz4/lz4   
         ./GetUserMsg --sf https://sourceforge.net/projects/sevenzip
